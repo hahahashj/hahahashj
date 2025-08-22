@@ -33,15 +33,194 @@
             padding: 14px 16px; /* 添加适当的padding保持一致性 */
         }
         
+        /* 添加搜索栏样式 */
+        .search-container {
+            padding: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .search-form input, .search-form select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .search-form button {
+            padding: 8px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .search-form button:hover {
+            background-color: #555;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        /* 添加表格样式 */
+        .info-table {
+            width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        
+        .info-table th, .info-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .info-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .info-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .info-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .action-buttons button {
+            padding: 6px 12px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .edit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .edit-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .delete-btn:hover {
+            background-color: #da190b;
+        }
     </style>
 </head>
 
 <body>
-    <div class  = "navbar">
+    <div class="navbar">
         <h1>我的网站登录</h1>
-        <a href = "">退出登录</a>
+        <a href="">退出登录</a>
     </div>
+
+    <!-- 添加搜索栏 -->
+    <div class="search-container">
+        <form class="search-form" action="#" method="get">
+            <div class="form-group">
+                <label for="name">姓名:</label>
+                <input type="text" id="name" name="name" placeholder="请输入姓名">
+            </div>
+            
+            <div class="form-group">    
+                <label for="gender">性别:</label>
+                <select id="gender" name="gender">
+                    <option value="">请选择</option>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="interest">兴趣:</label>
+                <select id="interest" name="interest">
+                    <option value="">请选择</option>
+                    <option value="sing">唱</option>
+                    <option value="jump">跳</option>
+                    <option value="rap">rap</option>
+                    <option value="basketball">篮球</option>
+                </select>
+            </div>
+            
+            <button type="submit">搜索</button>
+            <button type="reset">清空</button>
+        </form>
+    </div>
+    
+    <!-- 添加人员信息表格 -->
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>兴趣</th>
+                <th>出生日期</th>
+                <th>访问日期</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>25</td>
+                <td>男</td>
+                <td>篮球</td>
+                <td>1998-05-12</td>
+                <td>2023-10-15</td>
+                <td class="action-buttons">
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>30</td>
+                <td>女</td>
+                <td>唱</td>
+                <td>1993-08-24</td>
+                <td>2023-10-16</td>
+                <td class="action-buttons">
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>28</td>
+                <td>男</td>
+                <td>跳</td>
+                <td>1995-12-03</td>
+                <td>2023-10-17</td>
+                <td class="action-buttons">
+                    <button class="edit-btn">编辑</button>
+                    <button class="delete-btn">删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
-
-
